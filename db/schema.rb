@@ -10,18 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_28_230750) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_28_231847) do
   create_table "photos", force: :cascade do |t|
     t.string "title"
     t.text "caption"
     t.date "posted"
     t.integer "like_count"
-    t.integer "comment_count"
-    t.text "fans"
     t.text "comments"
     t.integer "photo_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "users", force: :cascade do |t|
