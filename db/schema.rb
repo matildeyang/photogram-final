@@ -10,27 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_28_233232) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_29_001554) do
   create_table "photos", force: :cascade do |t|
     t.text "caption"
-    t.integer "like_count"
+    t.integer "comments_count"
+    t.string "image"
+    t.integer "likes_count"
+    t.integer "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "image"
-    t.integer "owner_id"
-    t.integer "comment_count"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+    t.string "email"
+    t.integer "comments_count"
+    t.integer "likes_count"
+    t.boolean "private"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

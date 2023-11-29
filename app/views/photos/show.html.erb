@@ -20,13 +20,6 @@
 
     <dl>
       <dt>
-        Title
-      </dt>
-      <dd>
-        <%= @the_photo.title %>
-      </dd>
-
-      <dt>
         Caption
       </dt>
       <dd>
@@ -34,45 +27,31 @@
       </dd>
 
       <dt>
-        Posted
+        Comments count
       </dt>
       <dd>
-        <%= @the_photo.posted %>
+        <%= @the_photo.comments_count %>
       </dd>
 
       <dt>
-        Like count
+        Image
       </dt>
       <dd>
-        <%= @the_photo.like_count %>
+        <%= @the_photo.image %>
       </dd>
 
       <dt>
-        Comment count
+        Likes count
       </dt>
       <dd>
-        <%= @the_photo.comment_count %>
+        <%= @the_photo.likes_count %>
       </dd>
 
       <dt>
-        Fans
+        Owner
       </dt>
       <dd>
-        <%= @the_photo.fans %>
-      </dd>
-
-      <dt>
-        Comments
-      </dt>
-      <dd>
-        <%= @the_photo.comments %>
-      </dd>
-
-      <dt>
-        Photo
-      </dt>
-      <dd>
-        <%= @the_photo.photo_id %>
+        <%= @the_photo.owner_id %>
       </dd>
 
       <dt>
@@ -103,14 +82,6 @@
 
     <form action="/modify_photo/<%= @the_photo.id %>"  method="post" >
       <div>
-        <label for="title_box">
-          Title
-        </label>
-
-        <input type="text" id="title_box" name="query_title" value="<%= @the_photo.title %>">
-      </div>
-
-      <div>
         <label for="caption_box">
           Caption
         </label>
@@ -119,51 +90,35 @@
       </div>
 
       <div>
-        <label for="posted_box">
-          Posted
+        <label for="comments_count_box">
+          Comments count
         </label>
 
-        <input type="date" id="posted_box" name="query_posted" value="<%= @the_photo.posted %>">
+        <input type="text" id="comments_count_box" name="query_comments_count" value="<%= @the_photo.comments_count %>">
       </div>
 
       <div>
-        <label for="like_count_box">
-          Like count
+        <label for="image_box">
+          Image
         </label>
 
-        <input type="text" id="like_count_box" name="query_like_count" value="<%= @the_photo.like_count %>">
+        <input type="text" id="image_box" name="query_image" value="<%= @the_photo.image %>">
       </div>
 
       <div>
-        <label for="comment_count_box">
-          Comment count
+        <label for="likes_count_box">
+          Likes count
         </label>
 
-        <input type="text" id="comment_count_box" name="query_comment_count" value="<%= @the_photo.comment_count %>">
+        <input type="text" id="likes_count_box" name="query_likes_count" value="<%= @the_photo.likes_count %>">
       </div>
 
       <div>
-        <label for="fans_box">
-          Fans
+        <label for="owner_id_box">
+          Owner
         </label>
 
-        <textarea id="fans_box" name="query_fans"><%= @the_photo.fans %></textarea>
-      </div>
-
-      <div>
-        <label for="comments_box">
-          Comments
-        </label>
-
-        <textarea id="comments_box" name="query_comments"><%= @the_photo.comments %></textarea>
-      </div>
-
-      <div>
-        <label for="photo_id_box">
-          Photo
-        </label>
-
-        <input type="text" id="photo_id_box" name="query_photo_id" value="<%= @the_photo.photo_id %>">
+        <input type="text" id="owner_id_box" name="query_owner_id" value="<%= @the_photo.owner_id %>">
       </div>
 
       <button>
