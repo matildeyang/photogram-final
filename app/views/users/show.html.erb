@@ -58,7 +58,7 @@
         Password digest
       </dt>
       <dd>
-        <%= @the_user.password_digest %>
+        <%= @the_user.password %>
       </dd>
 
       <dt>
@@ -133,7 +133,7 @@
           Password digest
         </label>
 
-        <input type="text" id="password_digest_box" name="query_password_digest" value="<%= @the_user.password_digest %>">
+        <input type="text" id="password_digest_box" name="query_password_digest" value="<%= @the_user.password %>">
       </div>
 
       <button>

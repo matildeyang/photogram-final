@@ -13,40 +13,13 @@
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Email
-        </th>
-
-        <th>
-          Comments count
-        </th>
-
-        <th>
-          Likes count
-        </th>
-
-        <th>
-          Private
-        </th>
-
+        
         <th>
           Username
         </th>
 
         <th>
-          Password digest
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Private
         </th>
 
         <th>
@@ -55,39 +28,17 @@
 
       <% @list_of_users.each do |a_user| %>
       <tr>
-        <td>
-          <%= a_user.id %>
-        </td>
-
-        <td>
-          <%= a_user.email %>
-        </td>
-
-        <td>
-          <%= a_user.comments_count %>
-        </td>
-
-        <td>
-          <%= a_user.likes_count %>
-        </td>
-
-        <td>
-          <%= a_user.private %>
-        </td>
 
         <td>
           <%= a_user.username %>
         </td>
 
         <td>
-          <%= a_user.password %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_user.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_user.updated_at) %> ago
+          <% if a_user.private? %>
+            <p>Yes</p>
+          <% else %>
+            <p>No</p>
+          <% end %>
         </td>
 
         <td>
