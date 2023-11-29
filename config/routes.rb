@@ -1,5 +1,43 @@
 Rails.application.routes.draw do
 
+  # Routes for the Followrequest resource:
+
+  # CREATE
+  post("/insert_followrequest", { :controller => "followrequests", :action => "create" })
+          
+  # READ
+  get("/followrequests", { :controller => "followrequests", :action => "index" })
+  
+  get("/followrequests/:path_id", { :controller => "followrequests", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_followrequest/:path_id", { :controller => "followrequests", :action => "update" })
+  
+  # DELETE
+  get("/delete_followrequest/:path_id", { :controller => "followrequests", :action => "destroy" })
+
+  #------------------------------
+
+  # Routes for the Like resource:
+
+  # CREATE
+  post("/insert_like", { :controller => "likes", :action => "create" })
+          
+  # READ
+  get("/likes", { :controller => "likes", :action => "index" })
+  
+  get("/likes/:path_id", { :controller => "likes", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_like/:path_id", { :controller => "likes", :action => "update" })
+  
+  # DELETE
+  get("/delete_like/:path_id", { :controller => "likes", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Comment resource:
 
   # CREATE
