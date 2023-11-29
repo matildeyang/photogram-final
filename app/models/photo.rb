@@ -12,4 +12,13 @@
 #  owner_id       :integer
 #
 class Photo < ApplicationRecord
+  def user
+    key = self.owner_id
+
+    matching_set = User.where({ :id => key })
+
+    the_one = matching_set.at(0)
+
+    return the_one
+  end
 end
