@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   # Routes for the Follow request resource:
 
@@ -82,9 +83,9 @@ Rails.application.routes.draw do
 
   # Routes for the User resource:
 
-  get("/", { :controller => "users", :action => "index" })
+  root to: "users#index"
   # CREATE
-  post("/insert_user", { :controller => "users", :action => "create" })
+  post("/users/sign_up", { :controller => "users", :action => "create" })
           
   # READ
   get("/users", { :controller => "users", :action => "index" })
